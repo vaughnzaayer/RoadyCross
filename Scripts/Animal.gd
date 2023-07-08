@@ -26,10 +26,13 @@ var safeDist = 1
 # moveTimer: the animal's internal timer that tells it when to move
 # targetPosition: the animal's target position. updated at the start of every step, and the animal will then start to move towards it.
 # collision: the animal's Area2D that tells it when it's collided with something
+# collidingWith: an array of all areas currently colliding with the animal
 
 @onready var moveTimer = $Timer
 var targetPosition = Vector2.ZERO
 @onready var collision = $Area2D
+
+var collidingWith = []
 
 # state: the animal's current state, used in the animal's FSM
 # prevState: the previous state the animal was in. idk when this will be useful but I made it anyways just in case
@@ -43,6 +46,15 @@ enum states {
 	IDLE
 }
 
+func _ready():
+	moveTimer.timeout.connect(Callable(self, "MoveTimeout"))
+	
+	moveTimer.wait_time = moveInterval
+	moveTimer.one_shot = true
+	
+	collision.area_entered.connect(Callable(self, "AreaEntered"))
+	collision.area_exited.connect(Callable(self, "AreaExited"))
+	
 # call Spawn after instancing an animal to "activate" them.
 # kinda like _init but godot automatically calls _init when an object is instantiated and that's cringe
 func Spawn(dist, interval, steps, health, points, pos):
@@ -53,11 +65,6 @@ func Spawn(dist, interval, steps, health, points, pos):
 	self.points = points
 	
 	global_position = pos
-	
-	moveTimer.timeout.connect(Callable(self, "MoveTimeout"))
-	
-	moveTimer.wait_time = moveInterval
-	moveTimer.one_shot = true
 	
 	ChangeState(states.IDLE)
 
@@ -112,3 +119,34 @@ func Move():
 func MoveTimeout():
 	movesLeft = stepsPerMovement
 	ChangeState(states.MOVING)
+
+# function called to make animals take damage, also kills animals that reach 0 hp
+func TakeDamage(amount):
+	health -= amount
+	
+	if health <= 0:
+		Die()
+
+# called when the animal dies
+func Die():
+	#for now will just delete the animal from existence, we can add death animations later
+	queue_free()
+	
+# adds an area to the list of collisions, takes damage if it's a car
+func AddCollision(area):
+	collidingWith.append(area)
+	
+	if area.get_collision_layer().has(1):
+		TakeDamage(area.damage)
+
+# removes an area from the list of collisions
+func RemoveCollision(area):
+	collidingWith.erase(area)
+
+# detects when an area collides with the animal and adds it to the list of collisions
+func AreaEntered(area):
+	AddCollision(area)
+
+# detects when an area stops colliding with the animal and removes it from the list of collisions
+func AreaExited(area):
+	RemoveCollision(area)
