@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk5k0l7rplc2c"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_443fn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_732dl"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(200, 200)
+texture = SubResource("CanvasTexture_443fn")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_right = 82.0
+offset_bottom = 26.0
+scale = Vector2(0.005, 0.005)
+size_flags_horizontal = 4
+text = "Car Spawn"
+label_settings = SubResource("LabelSettings_732dl")
+horizontal_alignment = 1
+vertical_alignment = 1

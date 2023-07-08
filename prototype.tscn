@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl2vu6eeu3ybk"]
+
+[ext_resource type="PackedScene" uid="uid://dk5k0l7rplc2c" path="res://spawn_car_prototype.tscn" id="1_lhq1b"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eb7hg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rmsy3"]
+
+[node name="Prototype" type="Node2D"]
+position = Vector2(132, 165)
+scale = Vector2(3, 3)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(155, 47)
+scale = Vector2(312.5, 130.94)
+texture = SubResource("CanvasTexture_eb7hg")
+
+[node name="Lane" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(155.59, 19.25)
+scale = Vector2(315.18, 20.5)
+texture = SubResource("CanvasTexture_rmsy3")
+
+[node name="EndZone" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(156, -8)
+scale = Vector2(315, 20)
+texture = SubResource("CanvasTexture_rmsy3")
+
+[node name="Lane3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(155.59, 56.25)
+scale = Vector2(315.18, 20.5)
+texture = SubResource("CanvasTexture_rmsy3")
+
+[node name="Lane4" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(155.59, 91.25)
+scale = Vector2(315.18, 20.5)
+texture = SubResource("CanvasTexture_rmsy3")
+
+[node name="StartZone" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(156, 119)
+scale = Vector2(315, 20)
+texture = SubResource("CanvasTexture_rmsy3")
+
+[node name="CrSp1" parent="." instance=ExtResource("1_lhq1b")]
+position = Vector2(-25, 19)
+scale = Vector2(0.15, 0.15)
+
+[node name="CrSp2" parent="." instance=ExtResource("1_lhq1b")]
+position = Vector2(-25, 55)
+scale = Vector2(0.15, 0.15)
+
+[node name="CrSp3" parent="." instance=ExtResource("1_lhq1b")]
+position = Vector2(-25, 92)
+scale = Vector2(0.15, 0.15)
