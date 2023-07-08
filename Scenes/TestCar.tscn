@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c72cqspl7wp3q"]
+[gd_scene load_steps=4 format=3 uid="uid://k1i1r8iuu3lc"]
 
 [ext_resource type="Script" path="res://Scripts/Car.gd" id="1_atqd1"]
 
@@ -12,6 +12,7 @@ script = ExtResource("1_atqd1")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708

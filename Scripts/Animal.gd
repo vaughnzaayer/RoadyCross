@@ -136,8 +136,8 @@ func Die():
 func AddCollision(area):
 	collidingWith.append(area)
 	
-	if area.get_collision_layer().has(1):
-		TakeDamage(area.damage)
+	if area.get_collision_layer_value(2):
+		TakeDamage(area.get_parent().damage)
 
 # removes an area from the list of collisions
 func RemoveCollision(area):

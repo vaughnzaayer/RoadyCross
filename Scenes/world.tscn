@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://ddvcb7e07tk1a"]
+[gd_scene load_steps=3 format=3 uid="uid://ddvcb7e07tk1a"]
+
+[ext_resource type="PackedScene" uid="uid://bxx7vh2ugljgv" path="res://Scenes/TestAnimal.tscn" id="1_ycga6"]
+[ext_resource type="PackedScene" uid="uid://k1i1r8iuu3lc" path="res://Scenes/TestCar.tscn" id="2_a6c1f"]
 
 [node name="World" type="Node2D"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(274, 90)
-polygon = PackedVector2Array(38, 34, 383, 41, 396, 313, 53, 305)
+[node name="TestAnimal" parent="." instance=ExtResource("1_ycga6")]
+
+[node name="TestCar" parent="." instance=ExtResource("2_a6c1f")]
+position = Vector2(114, 495)
