@@ -27,7 +27,9 @@ enum states {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	startButton.pressed.connect(Callable(self, "StartPressed"))
+	quitButton.pressed.connect(Callable(self, "QuitPressed"))
+	returnButton.pressed.connect(Callable(self, "ReturnPressed"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -61,6 +63,8 @@ func IdleMode():
 	startButton.disabled = false
 	quitButton.disabled = false
 	returnButton.disabled = true
+	
+	titleHSText.visible = false
 
 func GameplayMode():
 	mainMenu.visible = false
@@ -74,11 +78,14 @@ func GameplayMode():
 func EndscreenMode():
 	mainMenu.visible = false
 	gameplayInfo.visible = false
-	endscreen.visible = false
+	endscreen.visible = true
 	
 	startButton.disabled = true
 	quitButton.disabled = true
 	returnButton.disabled = false
+	
+	endscreenHSNotification.visible = false
+	endscreenScore.text = "Score: " + str(GameManager.score)
 	
 func CalculateTime():
 	var rawTime = GameManager.gameTimer.get_time_left()
@@ -86,4 +93,16 @@ func CalculateTime():
 	var minutes = floori(rawTime / 60)
 	var seconds = floori(rawTime - (minutes * 60))
 	
-	return str(minutes) + ":" + str(seconds)
+	if seconds >= 10:
+		return str(minutes) + ":" + str(seconds)
+	else:
+		return str(minutes) + ":0" + str(seconds)
+
+func StartPressed():
+	GameManager.ChangeState(GameManager.states.ACTIVE)
+	
+func QuitPressed():
+	get_tree().quit()
+	
+func ReturnPressed():
+	GameManager.ChangeState(GameManager.states.IDLE)

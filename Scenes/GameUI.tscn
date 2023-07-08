@@ -25,6 +25,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="GameplayInfo" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="ScoreDisplay" type="Label" parent="MarginContainer/GameplayInfo"]
@@ -66,6 +67,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Endscreen" type="MarginContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 200
 
