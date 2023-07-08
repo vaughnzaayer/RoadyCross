@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl2vu6eeu3ybk"]
 
 [ext_resource type="PackedScene" uid="uid://dk5k0l7rplc2c" path="res://spawn_car_prototype.tscn" id="1_lhq1b"]
-[ext_resource type="Script" path="res://Scripts/PrototypeMain.gd" id="1_w04yd"]
 [ext_resource type="Texture2D" uid="uid://ctswxj2sjgwtc" path="res://Assets/Tilesets/BackgroundTM_rough.png" id="2_bb2tn"]
+[ext_resource type="PackedScene" uid="uid://bejna6nua4uw6" path="res://Scenes/AnimalSpawner.tscn" id="4_5onyd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wa54y"]
 texture = ExtResource("2_bb2tn")
@@ -21,7 +21,6 @@ sources/0 = SubResource("TileSetAtlasSource_wa54y")
 [node name="Prototype" type="Node2D"]
 position = Vector2(132, 165)
 scale = Vector2(3, 3)
-script = ExtResource("1_w04yd")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -43,17 +42,25 @@ position = Vector2(-28, 113)
 scale = Vector2(0.15, 0.15)
 
 [node name="SpawnPoint1" type="Node2D" parent="."]
+visible = false
 position = Vector2(-1.33333, 179.667)
 
 [node name="SpawnPoint2" type="Node2D" parent="."]
+visible = false
 position = Vector2(105.333, 179.667)
 
 [node name="SpawnPoint3" type="Node2D" parent="."]
+visible = false
 position = Vector2(190.667, 179.667)
 
 [node name="SpawnPoint4" type="Node2D" parent="."]
+visible = false
 position = Vector2(297.333, 179.667)
 
 [node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="AnimalSpawner" parent="." instance=ExtResource("4_5onyd")]
+position = Vector2(-25.6667, 171)
+scale = Vector2(0.33, 0.33)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
