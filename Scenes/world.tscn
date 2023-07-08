@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddvcb7e07tk1a"]
+
+[node name="World" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(274, 90)
+polygon = PackedVector2Array(38, 34, 383, 41, 396, 313, 53, 305)
