@@ -14,5 +14,6 @@ func _ready():
 func _process(delta):
 	if global_position.x >= target_location:
 		print("target reached")
+		queue_free()
 	else:
 		global_position.x = lerp(global_position.x, global_position.x + speed, 0.14)

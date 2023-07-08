@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Car.gd" id="1_atqd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6okp"]
+size = Vector2(44.4998, 44.5002)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2khr0"]
 
@@ -19,5 +20,5 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_l6okp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 20)
+scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_2khr0")
