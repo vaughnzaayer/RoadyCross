@@ -56,15 +56,10 @@ func _ready():
 	collision.area_exited.connect(Callable(self, "AreaExited"))
 	
 # call Spawn after instancing an animal to "activate" them.
-# kinda like _init but godot automatically calls _init when an object is instantiated and that's cringe
-func Spawn(dist, interval, steps, health, points, pos):
-	moveDistance = dist
-	moveInterval = interval
-	stepsPerMovement = steps
-	self.health = health
-	self.points = points
-	
+# unique animal variables are set in their subclass scripts
+func Spawn(pos):
 	global_position = pos
+	moveTimer.wait_time = moveInterval
 	
 	ChangeState(states.IDLE)
 
@@ -79,7 +74,7 @@ func _process(delta):
 			# when target is reached, take next step or idle again if out of steps
 			if global_position.distance_squared_to(targetPosition) <= safeDist:
 				global_position = targetPosition
-				print("reached target")
+				#print("reached target")
 				
 				if movesLeft > 0:
 					Move()
@@ -106,7 +101,7 @@ func EnterState(enteredState):
 	
 # calculates target position and steps remaining
 func Move():
-	var calcMovement = moveDistance/stepsPerMovement
+	var calcMovement = float(moveDistance)/stepsPerMovement
 	targetPosition = global_position + Vector2(0, -calcMovement)
 	movesLeft -= 1
 	

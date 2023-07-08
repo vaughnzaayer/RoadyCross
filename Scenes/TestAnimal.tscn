@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxx7vh2ugljgv"]
 
-[ext_resource type="Script" path="res://Scripts/Chicken.gd" id="1_lm4i8"]
+[ext_resource type="Script" path="res://Scripts/Bear.gd" id="1_xgcds"]
 [ext_resource type="Texture2D" uid="uid://b6rc1xcxo15dr" path="res://icon.svg" id="2_m0ij4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lqmo"]
@@ -8,7 +8,7 @@ radius = 19.0
 
 [node name="TestAnimal" type="Node2D"]
 position = Vector2(534, 680)
-script = ExtResource("1_lm4i8")
+script = ExtResource("1_xgcds")
 metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="."]

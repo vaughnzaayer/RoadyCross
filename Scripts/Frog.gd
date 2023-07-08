@@ -1,11 +1,11 @@
 extends Animal
 
-var newDist = 50
-var newInterval = 2
+var newDist = 64
+var newInterval = 3
 var newSteps = 1
-var newWeight = 0.14
+var newWeight = 0.1
 var newHealth = 1
-var newPoints = 100
+var newPoints = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
