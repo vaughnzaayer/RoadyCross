@@ -25,7 +25,8 @@ func _ready():
 	
 	await get_tree().process_frame
 	
-	ChangeState(states.IDLE)
+	if is_instance_valid(UI) and is_instance_valid(spawner):
+		ChangeState(states.IDLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
