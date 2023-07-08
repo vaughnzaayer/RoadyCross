@@ -28,9 +28,6 @@ func _ready():
 	spawnTimer.timeout.connect(Callable(self, "SpawnTimeout"))
 	spawnTimer.one_shot = true
 	spawnTimer.wait_time = spawnTime
-	
-	# start spawner
-	Activate()
 
 # starts the spawner
 func Activate():
@@ -39,6 +36,11 @@ func Activate():
 # stops the spawner
 func Deactivate():
 	spawnTimer.stop()
+	
+# deletes all currently active animals
+func ClearAnimals():
+	for i in animals.get_children():
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

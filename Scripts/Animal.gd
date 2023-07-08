@@ -139,7 +139,7 @@ func TakeDamage(amount):
 
 # called when the animal dies
 func Die():
-	#for now will just delete the animal from existence, we can add death animations later
+	GameManager.AddScore(points)
 	queue_free()
 	
 # adds an area to the list of collisions, takes damage if it's a car
