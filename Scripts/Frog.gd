@@ -7,6 +7,8 @@ var newWeight = 0.1
 var newHealth = 1
 var newPoints = 200
 
+var newVariance = 12
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
@@ -16,3 +18,5 @@ func _ready():
 	lerpWeight = newWeight
 	health = newHealth
 	points = newPoints
+	
+	xVariance = newVariance
