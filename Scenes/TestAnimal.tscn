@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxx7vh2ugljgv"]
+[gd_scene load_steps=4 format=3 uid="uid://bxx7vh2ugljgv"]
 
 [ext_resource type="Script" path="res://Scripts/Chicken.gd" id="1_lm4i8"]
+[ext_resource type="Texture2D" uid="uid://b6rc1xcxo15dr" path="res://icon.svg" id="2_m0ij4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lqmo"]
 radius = 19.0
@@ -12,10 +13,12 @@ metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="."]
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5lqmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_m0ij4")
