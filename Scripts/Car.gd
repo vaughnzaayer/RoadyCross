@@ -4,7 +4,7 @@ var speed = 100
 var damage = 1
 var direction = Vector2.RIGHT
 
-var target_location = 1100
+@export var end_zone = 1100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if global_position.x >= target_location:
+	if global_position.x >= end_zone:
 		print("target reached")
 		queue_free()
 	else:

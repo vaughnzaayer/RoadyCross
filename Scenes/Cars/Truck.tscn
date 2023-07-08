@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bleq27mrsawr3"]
+
+[ext_resource type="Script" path="res://Scripts/Truck.gd" id="1_2a7al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6okp"]
+size = Vector2(63.9994, 176)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2khr0"]
+
+[node name="TestCar" type="Node2D"]
+script = ExtResource("1_2a7al")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_l6okp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(176, 80)
+texture = SubResource("CanvasTexture_2khr0")

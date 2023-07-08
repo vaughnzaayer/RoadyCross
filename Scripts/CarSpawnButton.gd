@@ -1,6 +1,6 @@
 extends Node
 
-@onready var car = preload("res://Scenes/TestCar.tscn")
+@onready var car = preload("res://Scenes/Cars/Truck.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

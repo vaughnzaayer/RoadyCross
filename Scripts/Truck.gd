@@ -1,11 +1,11 @@
 extends Car
 
-@export var sedanSpeed = 50
-@export var sedanDmg = 5
+@export var truckSpeed = 15
+@export var truckDmg = 25
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	speed = sedanSpeed
-	damage = sedanDmg
+	speed = truckSpeed
+	damage = truckDmg

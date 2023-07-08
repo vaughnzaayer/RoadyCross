@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0h0ntlenmvph"]
+
+[ext_resource type="Script" path="res://Scripts/Sedan.gd" id="1_fv4qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6okp"]
+size = Vector2(44.4998, 44.5002)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2khr0"]
+
+[node name="TestCar" type="Node2D"]
+script = ExtResource("1_fv4qi")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_l6okp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_2khr0")
