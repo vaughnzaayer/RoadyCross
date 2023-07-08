@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bejna6nua4uw6"]
+
+[ext_resource type="Script" path="res://Scripts/AnimalSpawner.gd" id="1_oqaqy"]
+
+[node name="AnimalSpawner" type="Node2D"]
+script = ExtResource("1_oqaqy")
+
+[node name="SpawnPolnts" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPolnts"]
+position = Vector2(100, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPolnts"]
+position = Vector2(380, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPolnts"]
+position = Vector2(650, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPolnts"]
+position = Vector2(950, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Animals" type="Node2D" parent="."]

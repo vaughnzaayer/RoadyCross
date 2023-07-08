@@ -28,5 +28,5 @@ func _on_spawn_timer_timeout():
 	# Instantiate chicken
 	var ckn = chicken.instantiate()
 	add_child(ckn)
-	ckn.Spawn(64, 2, 1, 1, 100, spawnPoints[randi() % spawnPoints.size()].global_position)
+	ckn.Spawn(spawnPoints[randi() % spawnPoints.size()].global_position)
 	#ckn.global_position = spawnPoints[randi() % spawnPoints.size()].global_position
