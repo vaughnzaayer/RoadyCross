@@ -37,7 +37,7 @@ func _process(delta):
 		states.IDLE:
 			pass
 		states.GAMEPLAY:
-			scoreDisplay.text = str(GameManager.score)
+			scoreDisplay.text = "Score: " + str(GameManager.score)
 			timeDisplay.text = CalculateTime()
 	
 func ChangeState(newState):
