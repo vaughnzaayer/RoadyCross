@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl2vu6eeu3ybk"]
+[gd_scene load_steps=6 format=3 uid="uid://bl2vu6eeu3ybk"]
 
 [ext_resource type="PackedScene" uid="uid://dk5k0l7rplc2c" path="res://spawn_car_prototype.tscn" id="1_lhq1b"]
+[ext_resource type="Script" path="res://Scripts/PrototypeMain.gd" id="1_w04yd"]
 [ext_resource type="Texture2D" uid="uid://ctswxj2sjgwtc" path="res://Assets/Tilesets/BackgroundTM_rough.png" id="2_bb2tn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wa54y"]
@@ -20,6 +21,7 @@ sources/0 = SubResource("TileSetAtlasSource_wa54y")
 [node name="Prototype" type="Node2D"]
 position = Vector2(132, 165)
 scale = Vector2(3, 3)
+script = ExtResource("1_w04yd")
 
 [node name="CrSp1" parent="." instance=ExtResource("1_lhq1b")]
 position = Vector2(-95.3333, 31)
@@ -39,3 +41,19 @@ tile_set = SubResource("TileSet_dnrqr")
 cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(-65538, 131072, 0, -65537, 131072, 0, -131072, 131072, 0, -131071, 131072, 0, -131070, 131072, 0, -131069, 131072, 0, -131068, 131072, 0, -131067, 131072, 0, -131066, 131072, 0, -131065, 131072, 0, -131064, 131072, 0, -131063, 131072, 0, -2, 65536, 0, -1, 65536, 0, -65536, 65536, 0, -65535, 65536, 0, -65534, 65536, 0, -65533, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 393214, 327680, 0, 393215, 327680, 0, 327680, 327680, 0, 327681, 327680, 0, 327682, 327680, 0, 327683, 327680, 0, 327684, 327680, 0, 327685, 327680, 0, 327686, 327680, 0, 327687, 327680, 0, 327688, 327680, 0, 327689, 327680, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0)
+
+[node name="SpawnPoint1" type="Node2D" parent="."]
+position = Vector2(-1.33333, 179.667)
+
+[node name="SpawnPoint2" type="Node2D" parent="."]
+position = Vector2(105.333, 179.667)
+
+[node name="SpawnPoint3" type="Node2D" parent="."]
+position = Vector2(190.667, 179.667)
+
+[node name="SpawnPoint4" type="Node2D" parent="."]
+position = Vector2(297.333, 179.667)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
