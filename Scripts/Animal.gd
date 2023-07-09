@@ -153,6 +153,8 @@ func Die():
 	moveTimer.stop()
 	audio.PlayOnly("Die")
 	anim.play("Die")
+	collision.set_deferred("monitoring", false)
+	collision.set_deferred("monitorable", false)
 	
 # adds an area to the list of collisions, takes damage if it's a car
 func AddCollision(area):
