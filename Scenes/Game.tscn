@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://t0s3tpwefml0"]
 
 [ext_resource type="TileSet" uid="uid://cojg7nki0vg4e" path="res://Assets/Tilesets/main.tres" id="1_36222"]
-[ext_resource type="PackedScene" uid="uid://bt8ijl4it6a1i" path="res://Scenes/AnimalSpawner.tscn" id="2_3cuig"]
+[ext_resource type="PackedScene" uid="uid://bejna6nua4uw6" path="res://Scenes/AnimalSpawner.tscn" id="2_3cuig"]
 [ext_resource type="PackedScene" uid="uid://xu13mx6h1uav" path="res://Scenes/GameUI.tscn" id="3_24vd4"]
 [ext_resource type="Script" path="res://Scripts/CarSpawnButton.gd" id="4_kh3t1"]
 
