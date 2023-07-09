@@ -96,7 +96,8 @@ func _process(_delta):
 					ChangeState(states.IDLE)
 					
 		states.IDLE:
-			pass
+			if global_position.y < -16:
+				queue_free()
 	
 # function used to change an animal's state
 func ChangeState(newState):
