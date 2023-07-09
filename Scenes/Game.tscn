@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://t0s3tpwefml0"]
+[gd_scene load_steps=6 format=3 uid="uid://t0s3tpwefml0"]
 
 [ext_resource type="TileSet" uid="uid://cojg7nki0vg4e" path="res://Assets/Tilesets/main.tres" id="1_36222"]
 [ext_resource type="PackedScene" uid="uid://bt8ijl4it6a1i" path="res://Scenes/AnimalSpawner.tscn" id="2_3cuig"]
 [ext_resource type="PackedScene" uid="uid://xu13mx6h1uav" path="res://Scenes/GameUI.tscn" id="3_24vd4"]
 [ext_resource type="Script" path="res://Scripts/CarSpawnButton.gd" id="4_kh3t1"]
+[ext_resource type="AudioStream" uid="uid://bsyfw8032es3e" path="res://Sounds/Roadchill.mp3" id="5_nl2hs"]
 
 [node name="Game" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -90,6 +91,11 @@ script = ExtResource("4_kh3t1")
 
 [node name="Marker2D" type="Marker2D" parent="GameUI/SpawnButtons/CarSpawnButton5"]
 position = Vector2(-8, 40)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nl2hs")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="GameUI/SpawnButtons/CarSpawnButton1" to="GameUI/SpawnButtons/CarSpawnButton1" method="_on_pressed"]
 [connection signal="pressed" from="GameUI/SpawnButtons/CarSpawnButton2" to="GameUI/SpawnButtons/CarSpawnButton2" method="_on_pressed"]
