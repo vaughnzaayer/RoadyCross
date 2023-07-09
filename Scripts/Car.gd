@@ -3,6 +3,7 @@ class_name Car extends Node2D
 var speed = 100
 var damage = 1
 var direction = Vector2.RIGHT
+var cooldown = 3.0
 
 @export var end_zone = 1100
 

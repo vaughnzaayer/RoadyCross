@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bejna6nua4uw6"]
+[gd_scene load_steps=2 format=3 uid="uid://bt8ijl4it6a1i"]
 
 [ext_resource type="Script" path="res://Scripts/AnimalSpawner.gd" id="1_oqaqy"]
 
