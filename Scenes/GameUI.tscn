@@ -42,9 +42,13 @@ size_flags_vertical = 0
 
 [node name="SelectSedan" type="Button" parent="MarginContainer/CarSelection"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Sedan"
+
+[node name="SedanCdBar" type="ProgressBar" parent="MarginContainer/CarSelection"]
+layout_mode = 2
+size_flags_vertical = 1
 
 [node name="SelectMotorcycle" type="Button" parent="MarginContainer/CarSelection"]
 layout_mode = 2
@@ -52,12 +56,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Motorcycle"
 
+[node name="MotorcycleCdBar" type="ProgressBar" parent="MarginContainer/CarSelection"]
+layout_mode = 2
+
 [node name="SelectTruck" type="Button" parent="MarginContainer/CarSelection"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Truck
 "
+
+[node name="TruckCdBar" type="ProgressBar" parent="MarginContainer/CarSelection"]
+layout_mode = 2
 
 [node name="Title" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2

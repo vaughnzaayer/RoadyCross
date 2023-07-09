@@ -6,3 +6,9 @@
 script = ExtResource("1_06u68")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="SedanCooldownTimer" type="Timer" parent="."]
+
+[node name="MotorcycleCooldownTimer" type="Timer" parent="."]
+
+[node name="TruckCooldownTimer" type="Timer" parent="."]
