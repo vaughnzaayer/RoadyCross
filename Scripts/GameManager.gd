@@ -76,6 +76,7 @@ func EndGame():
 	spawner.Deactivate()
 	UI.ChangeState(UI.states.ENDSCREEN)
 	
+	# update high score and save it if it's a new best
 	if score > SaveData.highscore:
 		SaveData.highscore = score
 		SaveData.Save()
