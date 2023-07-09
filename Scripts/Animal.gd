@@ -41,6 +41,7 @@ var safeDist = 1
 var targetPosition = Vector2.ZERO
 @onready var collision = $Area2D
 @onready var audio = $AudioLibrary
+@onready var anim = $AnimationPlayer
 
 var collidingWith = []
 
@@ -108,8 +109,10 @@ func EnterState(enteredState):
 	match enteredState:
 		states.IDLE:
 			moveTimer.start()
+			anim.play("Idle")
 		states.MOVING:
 			Move()
+			anim.play("Move")
 	
 # calculates target position and steps remaining
 func Move():
@@ -145,7 +148,7 @@ func TakeDamage(amount):
 func Die():
 	GameManager.AddScore(points)
 	audio.PlayOnly("Die")
-	queue_free()
+	anim.play("Die")
 	
 # adds an area to the list of collisions, takes damage if it's a car
 func AddCollision(area):
