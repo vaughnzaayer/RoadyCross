@@ -3,6 +3,11 @@ extends Control
 @onready var gameplayInfo = $MarginContainer/GameplayInfo
 @onready var scoreDisplay = $MarginContainer/GameplayInfo/ScoreDisplay
 @onready var timeDisplay = $MarginContainer/GameplayInfo/TimeDisplay
+@onready var carSelect = $MarginContainer/CarSelection
+@onready var selectSedan = $MarginContainer/CarSelection/SelectSedan
+@onready var selectMotorcycle = $MarginContainer/CarSelection/SelectMotorcycle
+@onready var selectTruck = $MarginContainer/CarSelection/SelectTruck
+
 
 @onready var mainMenu = $MarginContainer/Title
 @onready var endscreen = $MarginContainer/Endscreen
@@ -59,10 +64,14 @@ func IdleMode():
 	mainMenu.visible = true
 	gameplayInfo.visible = false
 	endscreen.visible = false
+	carSelect.visible = false
 	
 	startButton.disabled = false
 	quitButton.disabled = false
 	returnButton.disabled = true
+	selectSedan.disabled = true 
+	selectMotorcycle.disabled = true
+	selectTruck.disabled = true
 	
 	titleHSText.visible = false
 
@@ -70,19 +79,27 @@ func GameplayMode():
 	mainMenu.visible = false
 	gameplayInfo.visible = true
 	endscreen.visible = false
+	carSelect.visible = true
 	
 	startButton.disabled = true
 	quitButton.disabled = true
 	returnButton.disabled = true
+	selectSedan.disabled = false 
+	selectMotorcycle.disabled = false
+	selectTruck.disabled = false
 
 func EndscreenMode():
 	mainMenu.visible = false
 	gameplayInfo.visible = false
 	endscreen.visible = true
+	carSelect.visible = false
 	
 	startButton.disabled = true
 	quitButton.disabled = true
 	returnButton.disabled = false
+	selectSedan.disabled = true 
+	selectMotorcycle.disabled = true
+	selectTruck.disabled = true
 	
 	endscreenHSNotification.visible = false
 	endscreenScore.text = "Score: " + str(GameManager.score)
