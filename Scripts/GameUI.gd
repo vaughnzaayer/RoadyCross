@@ -21,6 +21,9 @@ extends Control
 
 @onready var titleHSText = $MarginContainer/Title/VBoxContainer/Highscore
 
+# List is populated in _ready() func
+@onready var spawnCarButtons = []
+
 var state = states.IDLE
 var prevState
 
@@ -32,6 +35,9 @@ enum states {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for _each in get_node("SpawnButtons").get_children():
+		spawnCarButtons.append(_each)
+	
 	startButton.pressed.connect(Callable(self, "StartPressed"))
 	quitButton.pressed.connect(Callable(self, "QuitPressed"))
 	returnButton.pressed.connect(Callable(self, "ReturnPressed"))
@@ -73,6 +79,10 @@ func IdleMode():
 	selectMotorcycle.disabled = true
 	selectTruck.disabled = true
 	
+	for _each in spawnCarButtons:
+		_each.disabled = true
+		_each.visible = false
+	
 	titleHSText.visible = false
 
 func GameplayMode():
@@ -87,6 +97,10 @@ func GameplayMode():
 	selectSedan.disabled = false 
 	selectMotorcycle.disabled = false
 	selectTruck.disabled = false
+	
+	for _each in spawnCarButtons:
+		_each.disabled = false
+		_each.visible = true
 
 func EndscreenMode():
 	mainMenu.visible = false
@@ -100,6 +114,10 @@ func EndscreenMode():
 	selectSedan.disabled = true 
 	selectMotorcycle.disabled = true
 	selectTruck.disabled = true
+	
+	for _each in spawnCarButtons:
+		_each.disabled = true
+		_each.visible = false
 	
 	endscreenHSNotification.visible = false
 	endscreenScore.text = "Score: " + str(GameManager.score)
