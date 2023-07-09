@@ -29,6 +29,8 @@ func _ready():
 	gameTimer.wait_time = time
 	gameTimer.one_shot = true
 	
+	SaveData.Load()
+	
 	await get_tree().process_frame
 	
 	if is_instance_valid(UI) and is_instance_valid(spawner):
@@ -79,6 +81,10 @@ func EndGame():
 	# toggle endscreen UI
 	spawner.Deactivate()
 	UI.ChangeState(UI.states.ENDSCREEN)
+	
+	if score > SaveData.highscore:
+		SaveData.highscore = score
+		SaveData.Save()
 
 # returns to the main menu
 func Idle():
