@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ygsjo4jr1rmu"]
+[gd_scene load_steps=7 format=3 uid="uid://ygsjo4jr1rmu"]
 
 [ext_resource type="Script" path="res://Scripts/Bear.gd" id="1_xkiby"]
 [ext_resource type="Texture2D" uid="uid://b6rc1xcxo15dr" path="res://icon.svg" id="2_wc868"]
 [ext_resource type="PackedScene" uid="uid://ffmpggw8q73b" path="res://Scenes/AudioLibraries/BearAudioLibrary.tscn" id="3_kgteu"]
+[ext_resource type="Script" path="res://Scripts/SpriteBlinkUtility.gd" id="3_vfgng"]
+[ext_resource type="PackedScene" uid="uid://v6c3iod8c2t5" path="res://Scenes/SpriteBlinkUtility.tscn" id="4_gmhi4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5q6t"]
 radius = 18.0
@@ -21,5 +23,8 @@ shape = SubResource("CircleShape2D_k5q6t")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("2_wc868")
+script = ExtResource("3_vfgng")
+
+[node name="AnimationPlayer" parent="Sprite2D" instance=ExtResource("4_gmhi4")]
 
 [node name="AudioLibrary" parent="." instance=ExtResource("3_kgteu")]

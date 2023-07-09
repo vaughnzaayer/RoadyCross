@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://lko0drxnjpwh"]
+[gd_scene load_steps=7 format=3 uid="uid://lko0drxnjpwh"]
 
 [ext_resource type="Script" path="res://Scripts/Squirrel.gd" id="1_t3t0w"]
 [ext_resource type="Texture2D" uid="uid://b6rc1xcxo15dr" path="res://icon.svg" id="2_3dq40"]
 [ext_resource type="PackedScene" uid="uid://cnodfubrqxave" path="res://Scenes/AudioLibraries/SquirrelAudioLibrary.tscn" id="2_gpwy7"]
+[ext_resource type="Script" path="res://Scripts/SpriteBlinkUtility.gd" id="3_gebuq"]
+[ext_resource type="PackedScene" uid="uid://v6c3iod8c2t5" path="res://Scenes/SpriteBlinkUtility.tscn" id="4_2o06l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5q6t"]
 radius = 8.06226
@@ -21,5 +23,8 @@ shape = SubResource("CircleShape2D_k5q6t")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_3dq40")
+script = ExtResource("3_gebuq")
+
+[node name="AnimationPlayer" parent="Sprite2D" instance=ExtResource("4_2o06l")]
 
 [node name="AudioLibrary" parent="." instance=ExtResource("2_gpwy7")]
