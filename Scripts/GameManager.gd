@@ -105,11 +105,10 @@ func EndGame():
 	# toggle endscreen UI
 	spawner.Deactivate()
 	UI.ChangeState(UI.states.ENDSCREEN)
-	
-	# update high score and save it if it's a new best
-	if score > SaveData.highscore:
-		SaveData.highscore = score
-		SaveData.Save()
+		
+func UpdateHS():
+	SaveData.highscore = score
+	SaveData.Save()
 
 # returns to the main menu
 func Idle():

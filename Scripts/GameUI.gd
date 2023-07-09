@@ -87,7 +87,7 @@ func IdleMode():
 		_each.disabled = true
 		_each.visible = false
 	
-	titleHSText.visible = false
+	titleHSText.text = "Highscore: " + str(SaveData.highscore)
 
 func GameplayMode():
 	mainMenu.visible = false
@@ -123,7 +123,12 @@ func EndscreenMode():
 		_each.disabled = true
 		_each.visible = false
 	
-	endscreenHSNotification.visible = false
+	if GameManager.score > SaveData.highscore:
+		endscreenHSNotification.visible = true
+		GameManager.UpdateHS()
+	else:
+		endscreenHSNotification.visible = false
+		
 	endscreenScore.text = "Score: " + str(GameManager.score)
 	
 func CalculateTime():
