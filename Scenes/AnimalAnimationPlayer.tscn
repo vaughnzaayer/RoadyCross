@@ -1,15 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://ygsjo4jr1rmu"]
+[gd_scene load_steps=6 format=3 uid="uid://b71g45c01rx54"]
 
-[ext_resource type="Script" path="res://Scripts/Bear.gd" id="1_xkiby"]
-[ext_resource type="Texture2D" uid="uid://dfc6di601w46c" path="res://Sprites/Bear.png" id="2_dm8xk"]
-[ext_resource type="PackedScene" uid="uid://ffmpggw8q73b" path="res://Scenes/AudioLibraries/BearAudioLibrary.tscn" id="3_kgteu"]
-[ext_resource type="Script" path="res://Scripts/SpriteBlinkUtility.gd" id="3_vfgng"]
-[ext_resource type="PackedScene" uid="uid://v6c3iod8c2t5" path="res://Scenes/SpriteBlinkUtility.tscn" id="4_gmhi4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_k5q6t"]
-radius = 23.0
-
-[sub_resource type="Animation" id="Animation_a1qtv"]
+[sub_resource type="Animation" id="Animation_qa3aq"]
 resource_name = "Idle"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,7 +15,7 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_l4ca6"]
+[sub_resource type="Animation" id="Animation_f3hrj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,10 +30,11 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_fkx5v"]
+[sub_resource type="Animation" id="Animation_1l0kp"]
 resource_name = "Move"
-length = 0.40001
+length = 0.333342
 loop_mode = 1
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,13 +42,13 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
 }
 
-[sub_resource type="Animation" id="Animation_sb6j5"]
+[sub_resource type="Animation" id="Animation_e41ic"]
 resource_name = "Die"
 length = 2.00001
 tracks/0/type = "value"
@@ -100,38 +92,16 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vx2i"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kokj"]
 _data = {
-"Die": SubResource("Animation_sb6j5"),
-"Idle": SubResource("Animation_a1qtv"),
-"Move": SubResource("Animation_fkx5v"),
-"RESET": SubResource("Animation_l4ca6")
+"Die": SubResource("Animation_e41ic"),
+"Idle": SubResource("Animation_qa3aq"),
+"Move": SubResource("Animation_1l0kp"),
+"RESET": SubResource("Animation_f3hrj")
 }
 
-[node name="Bear" type="Node2D"]
-script = ExtResource("1_xkiby")
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_k5q6t")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_dm8xk")
-hframes = 2
-vframes = 2
-script = ExtResource("3_vfgng")
-
-[node name="AnimationPlayer" parent="Sprite2D" instance=ExtResource("4_gmhi4")]
-
-[node name="AudioLibrary" parent="." instance=ExtResource("3_kgteu")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer"]
 autoplay = "Idle"
 libraries = {
-"": SubResource("AnimationLibrary_8vx2i")
+"": SubResource("AnimationLibrary_1kokj")
 }
