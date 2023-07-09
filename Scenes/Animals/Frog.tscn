@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf8cdqni2kuh0"]
+[gd_scene load_steps=5 format=3 uid="uid://cf8cdqni2kuh0"]
 
 [ext_resource type="Script" path="res://Scripts/Frog.gd" id="1_lphqg"]
 [ext_resource type="Texture2D" uid="uid://b6rc1xcxo15dr" path="res://icon.svg" id="2_i1l8o"]
+[ext_resource type="PackedScene" uid="uid://y2ni4bdv4gkm" path="res://Scenes/AudioLibraries/FrogAudioLibrary.tscn" id="2_qowcq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5q6t"]
 radius = 11.0454
@@ -16,6 +17,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_k5q6t")
+
+[node name="AudioLibrary" parent="Area2D/CollisionShape2D" instance=ExtResource("2_qowcq")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.16, 0.16)

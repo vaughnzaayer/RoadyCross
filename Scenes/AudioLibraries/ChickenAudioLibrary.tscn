@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp0nt2ng0b50v"]
+
+[ext_resource type="Script" path="res://Scripts/AudioLibrary.gd" id="1_veej7"]
+[ext_resource type="AudioStream" uid="uid://csmoexe2mt6ly" path="res://Sounds/ChickenHit.mp3" id="2_e3a03"]
+[ext_resource type="AudioStream" uid="uid://uqyfga10ridg" path="res://Sounds/ChickenDie.mp3" id="3_e3mel"]
+
+[node name="AudioLibrary" type="Node2D"]
+script = ExtResource("1_veej7")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e3a03")
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e3mel")

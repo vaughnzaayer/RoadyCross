@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnodfubrqxave"]
+
+[ext_resource type="Script" path="res://Scripts/AudioLibrary.gd" id="1_r5lrl"]
+[ext_resource type="AudioStream" uid="uid://bjnrthyovbn5q" path="res://Sounds/SquirrelDie.mp3" id="2_xv0k0"]
+
+[node name="AudioLibrary" type="Node2D"]
+script = ExtResource("1_r5lrl")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xv0k0")
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xv0k0")
