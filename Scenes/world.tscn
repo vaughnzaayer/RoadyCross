@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddvcb7e07tk1a"]
+[gd_scene load_steps=6 format=3 uid="uid://ddvcb7e07tk1a"]
 
-[ext_resource type="PackedScene" uid="uid://bxx7vh2ugljgv" path="res://Scenes/TestAnimal.tscn" id="1_ycga6"]
+[ext_resource type="PackedScene" uid="uid://d1eckx0x74l1n" path="res://Scenes/Animals/Chicken.tscn" id="1_dv1r7"]
+[ext_resource type="PackedScene" uid="uid://cf8cdqni2kuh0" path="res://Scenes/Animals/Frog.tscn" id="1_tce5y"]
+[ext_resource type="PackedScene" uid="uid://ygsjo4jr1rmu" path="res://Scenes/Animals/Bear.tscn" id="1_txmn7"]
 [ext_resource type="PackedScene" uid="uid://k1i1r8iuu3lc" path="res://Scenes/TestCar.tscn" id="2_a6c1f"]
+[ext_resource type="PackedScene" uid="uid://lko0drxnjpwh" path="res://Scenes/Animals/Squirrel.tscn" id="5_62s5u"]
 
 [node name="World" type="Node2D"]
 
-[node name="TestAnimal" parent="." instance=ExtResource("1_ycga6")]
+[node name="Frog" parent="." instance=ExtResource("1_tce5y")]
+position = Vector2(497, 124)
+
+[node name="Chicken" parent="." instance=ExtResource("1_dv1r7")]
+position = Vector2(902, 141)
+
+[node name="Bear" parent="." instance=ExtResource("1_txmn7")]
+position = Vector2(679, 133)
 
 [node name="TestCar" parent="." instance=ExtResource("2_a6c1f")]
-position = Vector2(114, 495)
+position = Vector2(131, 130)
+
+[node name="Squirrel" parent="." instance=ExtResource("5_62s5u")]
+position = Vector2(336, 131)

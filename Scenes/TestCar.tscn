@@ -9,6 +9,7 @@ size = Vector2(44.4998, 44.5002)
 
 [node name="TestCar" type="Node2D"]
 script = ExtResource("1_atqd1")
+metadata/_edit_group_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
