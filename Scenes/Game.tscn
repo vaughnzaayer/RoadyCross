@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://t0s3tpwefml0"]
+[gd_scene load_steps=4 format=3 uid="uid://t0s3tpwefml0"]
 
 [ext_resource type="TileSet" uid="uid://cojg7nki0vg4e" path="res://Assets/Tilesets/main.tres" id="1_36222"]
 [ext_resource type="PackedScene" path="res://Scenes/AnimalSpawner.tscn" id="2_3cuig"]
 [ext_resource type="PackedScene" uid="uid://xu13mx6h1uav" path="res://Scenes/GameUI.tscn" id="3_24vd4"]
-[ext_resource type="PackedScene" uid="uid://cm2l82n1cv0h6" path="res://Scenes/SpawnCarButton.tscn" id="4_3qj1p"]
 
 [node name="Game" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -25,8 +24,48 @@ offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SpawnCarButton" parent="." instance=ExtResource("4_3qj1p")]
-offset_left = 40.0
-offset_top = 96.0
+[node name="SpawnButtons" type="Control" parent="GameUI"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 96.0
+offset_bottom = 40.0
+
+[node name="CarSpawnButton1" type="Button" parent="GameUI/SpawnButtons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 85.0
+offset_bottom = 103.0
+text = "Send Car"
+
+[node name="CarSpawnButton2" type="Button" parent="GameUI/SpawnButtons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 168.0
+offset_right = 85.0
+offset_bottom = 199.0
+text = "Send Car"
+
+[node name="CarSpawnButton3" type="Button" parent="GameUI/SpawnButtons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 264.0
+offset_right = 85.0
+offset_bottom = 295.0
+text = "Send Car"
+
+[node name="CarSpawnButton4" type="Button" parent="GameUI/SpawnButtons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 392.0
+offset_right = 85.0
+offset_bottom = 423.0
+text = "Send Car"
+
+[node name="CarSpawnButton5" type="Button" parent="GameUI/SpawnButtons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 520.0
+offset_right = 85.0
+offset_bottom = 551.0
+text = "Send Car"

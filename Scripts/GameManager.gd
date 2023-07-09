@@ -17,6 +17,12 @@ enum states {
 	END
 }
 
+enum carSelection {
+	SEDAN,
+	MOTORCYCLE,
+	TRUCK
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gameTimer.timeout.connect(Callable(self, "GameTimeout"))
