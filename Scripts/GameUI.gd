@@ -54,7 +54,7 @@ func _ready():
 	truckCdBar.max_value = GameManager.truckCdTime
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	match state:
 		states.IDLE:
 			pass

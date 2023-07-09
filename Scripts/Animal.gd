@@ -76,7 +76,7 @@ func Spawn(pos):
 	ChangeState(states.IDLE)
 
 # this is where the bulk of the animal FSM is contained
-func _process(delta):
+func _process(_delta):
 	match state:
 		states.MOVING:
 			# move towards target position
