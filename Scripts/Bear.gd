@@ -4,7 +4,7 @@ var newDist = 12
 var newInterval = 0.5
 var newSteps = 3
 var newWeight = 0.2
-var newHealth = 3
+var newHealth = 25
 var newPoints = 500
 
 # Called when the node enters the scene tree for the first time.

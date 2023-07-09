@@ -4,7 +4,7 @@ var newDist = 50
 var newInterval = 2
 var newSteps = 1
 var newWeight = 0.14
-var newHealth = 2
+var newHealth = 5
 var newPoints = 100
 
 var newVariance = 10

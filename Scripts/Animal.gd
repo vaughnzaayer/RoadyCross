@@ -54,7 +54,8 @@ var prevState = null
 
 enum states {
 	MOVING,
-	IDLE
+	IDLE,
+	DEAD
 }
 
 func _ready():
@@ -113,6 +114,8 @@ func EnterState(enteredState):
 		states.MOVING:
 			Move()
 			anim.play("Move")
+		states.DEAD:
+			Die()
 	
 # calculates target position and steps remaining
 func Move():
@@ -140,13 +143,14 @@ func TakeDamage(amount):
 	health -= amount
 	
 	if health <= 0:
-		Die()
+		ChangeState(states.DEAD)
 	else:
 		audio.Play("Hit")
 
 # called when the animal dies
 func Die():
 	GameManager.AddScore(points)
+	moveTimer.stop()
 	audio.PlayOnly("Die")
 	anim.play("Die")
 	

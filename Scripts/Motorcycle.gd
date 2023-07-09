@@ -1,7 +1,7 @@
 extends Car
 
 @export var motorcycleSpeed = 150
-@export var motorcycleDmg = 1
+@export var motorcycleDmg = 3
 @export var motorcycleCooldown = 1.5
 
 
