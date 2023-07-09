@@ -17,13 +17,20 @@ func _process(delta):
 
 
 func _on_pressed():
-	var c
+	var c = null
 	match GameManager.currentCar:
 		GameManager.carSelection.SEDAN:
-			c = sedan.instantiate()
+			if GameManager.sedanAvailable:
+				c = sedan.instantiate()
+				GameManager.SedanCooldown()
 		GameManager.carSelection.MOTORCYCLE:
-			c = motorcycle.instantiate()
+			if GameManager.motorcycleAvailable:
+				c = motorcycle.instantiate()
+				GameManager.MotorcycleCooldown()
 		GameManager.carSelection.TRUCK:
-			c = truck.instantiate()
+			if GameManager.truckAvailable:
+				c = truck.instantiate()
+				GameManager.TruckCooldown()
+	if c == null: return
 	c.global_position.y += 30
 	add_child(c)
