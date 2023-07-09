@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Truck.gd" id="1_2a7al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6okp"]
-size = Vector2(63.9994, 176)
+size = Vector2(31.9995, 144)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2khr0"]
 
@@ -21,5 +21,5 @@ shape = SubResource("RectangleShape2D_l6okp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-scale = Vector2(176, 80)
+scale = Vector2(145.884, 40.0747)
 texture = SubResource("CanvasTexture_2khr0")

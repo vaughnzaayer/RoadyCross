@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Sedan.gd" id="1_fv4qi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6okp"]
-size = Vector2(44.4998, 44.5002)
+size = Vector2(15.9999, 16.0001)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2khr0"]
 
@@ -21,5 +21,5 @@ shape = SubResource("RectangleShape2D_l6okp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 1, 1)
-scale = Vector2(50, 50)
+scale = Vector2(25, 25)
 texture = SubResource("CanvasTexture_2khr0")

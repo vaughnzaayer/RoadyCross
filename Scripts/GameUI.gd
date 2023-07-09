@@ -41,6 +41,10 @@ func _ready():
 	startButton.pressed.connect(Callable(self, "StartPressed"))
 	quitButton.pressed.connect(Callable(self, "QuitPressed"))
 	returnButton.pressed.connect(Callable(self, "ReturnPressed"))
+	
+	selectSedan.pressed.connect(Callable(self, "SedanSelected"))
+	selectMotorcycle.pressed.connect(Callable(self, "MotorcycleSelected"))
+	selectTruck.pressed.connect(Callable(self, "TruckSelected"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -141,3 +145,17 @@ func QuitPressed():
 	
 func ReturnPressed():
 	GameManager.ChangeState(GameManager.states.IDLE)
+	
+func SedanSelected():
+	GameManager.currentCar = GameManager.carSelection.SEDAN
+	print('Selected Sedan')
+	
+func MotorcycleSelected():
+	GameManager.currentCar = GameManager.carSelection.MOTORCYCLE
+	print('Selected Motorcycle')
+	
+func TruckSelected():
+	GameManager.currentCar = GameManager.carSelection.TRUCK
+	print('Selected Truck')
+	
+

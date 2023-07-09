@@ -11,6 +11,8 @@ var time = 120
 var state = states.IDLE
 var prevState
 
+var currentCar = carSelection.SEDAN
+
 enum states {
 	IDLE,
 	ACTIVE,
