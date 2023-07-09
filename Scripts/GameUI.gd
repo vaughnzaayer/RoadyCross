@@ -8,6 +8,9 @@ extends Control
 @onready var selectMotorcycle = $MarginContainer/CarSelection/SelectMotorcycle
 @onready var selectTruck = $MarginContainer/CarSelection/SelectTruck
 
+@onready var sedanCdBar = $MarginContainer/CarSelection/SedanCdBar
+@onready var motorcycleCdBar = $MarginContainer/CarSelection/MotorcycleCdBar
+@onready var truckCdBar = $MarginContainer/CarSelection/TruckCdBar
 
 @onready var mainMenu = $MarginContainer/Title
 @onready var endscreen = $MarginContainer/Endscreen
@@ -46,6 +49,10 @@ func _ready():
 	selectMotorcycle.pressed.connect(Callable(self, "MotorcycleSelected"))
 	selectTruck.pressed.connect(Callable(self, "TruckSelected"))
 
+	sedanCdBar.max_value = GameManager.sedanCdTime
+	motorcycleCdBar.max_value = GameManager.motorcycleCdTime
+	truckCdBar.max_value = GameManager.truckCdTime
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	match state:
@@ -54,6 +61,10 @@ func _process(delta):
 		states.GAMEPLAY:
 			scoreDisplay.text = "Score: " + str(GameManager.score)
 			timeDisplay.text = CalculateTime()
+	
+	sedanCdBar.value = GameManager.sedanCdTime - GameManager.sedanCooldownTimer.time_left
+	motorcycleCdBar.value = GameManager.motorcycleCdTime - GameManager.motorcycleCooldownTimer.time_left
+	truckCdBar.value = GameManager.truckCdTime - GameManager.truckCooldownTimer.time_left
 	
 func ChangeState(newState):
 	prevState = state
