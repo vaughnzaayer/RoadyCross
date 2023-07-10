@@ -95,7 +95,6 @@ position = Vector2(-8, 40)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nl2hs")
 autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="GameUI/SpawnButtons/CarSpawnButton1" to="GameUI/SpawnButtons/CarSpawnButton1" method="_on_pressed"]
 [connection signal="pressed" from="GameUI/SpawnButtons/CarSpawnButton2" to="GameUI/SpawnButtons/CarSpawnButton2" method="_on_pressed"]
